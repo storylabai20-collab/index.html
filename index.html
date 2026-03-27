@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Kunjae 💗</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Comic Sans MS', cursive;
+    background: linear-gradient(to bottom, #ffd6e8, #ffc0cb);
+    overflow: hidden;
+    text-align: center;
+}
+
+h1 {
+    color: #ff4d88;
+    margin-top: 20px;
+    font-size: 40px;
+}
+
+.message {
+    width: 80%;
+    margin: auto;
+    background: #fff0f5;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px pink;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background: #ff4d88;
+    border: none;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.heart {
+    position: absolute;
+    color: #ff4d88;
+    font-size: 20px;
+    animation: float 5s linear infinite;
+}
+
+@keyframes float {
+    from { transform: translateY(100vh); }
+    to { transform: translateY(-10vh); }
+}
+
+/* candles */
+.candle {
+    width: 20px;
+    height: 60px;
+    background: pink;
+    margin: 5px;
+    display: inline-block;
+    border-radius: 5px;
+    position: relative;
+}
+
+.flame {
+    width: 10px;
+    height: 15px;
+    background: gold;
+    border-radius: 50%;
+    position: absolute;
+    top: -15px;
+    left: 5px;
+    animation: flicker 0.3s infinite;
+}
+
+@keyframes flicker {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.2); }
+}
+
+.game {
+    margin-top: 20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>🎂 Happy Birthday Kunjae 💗</h1>
+
+<div>
+    <div class="candle"><div class="flame"></div></div>
+    <div class="candle"><div class="flame"></div></div>
+    <div class="candle"><div class="flame"></div></div>
+    <div class="candle"><div class="flame"></div></div>
+</div>
+
+<div class="message">
+    <p>
+        My dearest Kunjae 💖<br><br>
+        From the moment you sat behind me, you slowly became my favorite person...  
+        and now you are my whole world 🌍💗<br><br>
+
+        I love your smile, your presence, your everything… even your silly moments 😂💞  
+        (yes even when you act like a baby 😌)<br><br>
+
+        I just want you to know this —  
+        you WILL achieve everything you dream of 🌟  
+        Just wait… be patient… and keep working hard 💪✨<br><br>
+
+        I will always be right here, loving you, supporting you, and believing in you 💗  
+    </p>
+</div>
+
+<div class="game">
+    <p>🎮 Catch the hearts game! Click them 💖</p>
+</div>
+
+<button onclick="playSong()">💗 Click for your song 💗</button>
+
+<audio id="song">
+    <source src="your-song.mp3" type="audio/mpeg">
+</audio>
+
+<div class="message">
+    <p>
+        🎶 Song for you 🎶<br><br>
+
+        "In your eyes I found my home,<br>
+        In your smile I’m never alone,<br>
+        Every heartbeat calls your name,<br>
+        Forever love, forever the same 💗"
+    </p>
+</div>
+
+<script>
+
+// floating hearts
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (15 + Math.random() * 20) + "px";
+
+    heart.onclick = () => {
+        alert("You caught my heart 💗");
+        heart.remove();
+    };
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}
+
+setInterval(createHeart, 500);
+
+// play music
+function playSong() {
+    document.getElementById("song").play();
+}
+
+</script>
+
+</body>
+</html>
